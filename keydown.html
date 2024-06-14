@@ -1,0 +1,81 @@
+<!--
+● Crea una página junto a un script que guarde dentro de una variable global
+un color dependiendo de la letra del teclado presionada. (2 Puntos).
+○ La letra a guardará el color rosado.
+○ La letra s guardará el color naranjo.
+○ La letra d guardará el color celeste.
+○ Para guardar el color revisa el tip al final del enunciado.
+○ Crea un nuevo div con el id “key”, de 200 px de ancho y alto y de
+color blanco y borde negro.
+○ Al presionar las teclas a, s o d, se deberá cambiar el color del div
+“key” a rosado, naranjo o celeste respectivamente.
+
+--------------------------------------------------------------------------------
+la forma en la que se pide que se desarrolle esto es muy muy muy mala
+ya que la necesidad de cambiar el color no requiere de la llamada variable global
+y el funcionamiento de asignar el valor nuevo a la variable corresponde a las
+mismas condiciones que las que aplican el cambio de color al div.
+--------------------------------------------------------------------------------
+
+● Siguiendo con la lógica del punto anterior, al presionar las teclas q, w o e se
+deberá crear un div nuevo de las mismas dimensiones antes mencionadas
+con los colores morado, gris y café respectivamente. (1 Punto)
+
+ESTA DESCRIPCION HACE ENTENDER:
+- Al precionar la tecla ('q', 'w' o 'e') se agrega un nuevo div.
+- El color del div agregado dependera de la tecla presionada.
+
+Esto significa que no esta modificando o reiterando lo mencionado anteriormente
+sino que busca que se agregue cuantos div la persona quiera cada ves que presione
+una de las 3 teclas, lo que me parece no a de ser correcto.
+
+-->
+<body>
+    <div id="key"
+    style="
+        background-color: white;
+        border-width: 1px;
+        border-style: solid;
+        border-color: black;
+        width: 200px;
+        height: 200px;
+    ">
+
+    </div>
+    <script>
+        var color1 = ''
+
+        document.addEventListener('keydown', function(event){
+            if (event.key === 'a') {
+                var color1 = 'pink'
+                document.getElementById('key').style.backgroundColor = color1
+            } else if (event.key === 's') {
+                var color1 = 'orange'
+                document.getElementById('key').style.backgroundColor = color1
+            } else if (event.key === 'd') {
+                var color1 = 'lightblue'
+                document.getElementById('key').style.backgroundColor = color1
+            }
+
+            if (event.key === 'q') {
+                let body = document.querySelector('body')
+                let html = body.innerHTML
+                html = html + "<div style='background-color: purple; border-width: 1px; border-style: solid; border-color: black; width: 200px; height: 200px;'>"
+                body.innerHTML = html
+
+            } else  if (event.key === 'w') {
+                let body = document.querySelector('body')
+                let html = body.innerHTML
+                html = html + "<div style='background-color: gray; border-width: 1px; border-style: solid; border-color: black; width: 200px; height: 200px;'>"
+                body.innerHTML = html
+
+            } else  if (event.key === 'e') {
+                let body = document.querySelector('body')
+                let html = body.innerHTML
+                html = html + "<div style='background-color: brown; border-width: 1px; border-style: solid; border-color: black; width: 200px; height: 200px;'>"
+                body.innerHTML = html
+
+            }
+        })
+    </script>
+</body>
